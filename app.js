@@ -62,7 +62,7 @@ async function fetchWeather(latitude, longitude) {
 	const jsonData = await response.json();
 	//console.log(jsonData);
 	let temp = jsonData.current_weather.temperature;
-	document.querySelector(".degree_F").innerHTML=temp + " &#176F";
+	document.querySelector(".degree_F").innerHTML=Math.floor(temp) + " &#176F";
 	document.querySelector(".degree_C").innerHTML=Math.floor((temp-32) *5/9) + " &#176C";
 	/* Get the city value, or the default of Paris, if blank */
 	let city = document.getElementById("city").value || 'Paris, France';
